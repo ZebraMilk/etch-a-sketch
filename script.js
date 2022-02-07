@@ -1,6 +1,6 @@
 // add divs to the sketch-grid
+let size = document.querySelector('#size').value;
 
-let size = prompt("How tall, in squares, do you want the sketch grid?");
 // grab the grid from the DOM to play with
 let grid = document.querySelector('.sketch-grid');
 // set the gridTemplate for the value of size
@@ -17,13 +17,21 @@ for (let index = 0; index < size*size; index++) {
 // grab all the squares I have made and turn em into an array
 let squares = [... (document.querySelectorAll('.square'))];
 // add evetnListener to each square that responds to mouseOver?
+// squares.forEach(square => square.addEventListener('mouseover', checkMouseDown));
 squares.forEach(square => square.addEventListener('mouseover', changeColor));
+squares.forEach(square => square.addEventListener('mousedown', changeColor));
 
-console.log(squares);
+// default 
 
 // test function attached to the eventListener on each square
 function changeColor(e) {
-
+  // default drawing
     e.target.style.backgroundColor = '#1e3d3f'
-  
+  // cases for the options selected
+
+}
+
+
+function sizeUpdate(e) {
+  size = e.target.value;
 }
