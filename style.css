@@ -1,0 +1,39 @@
+* {
+  border: 1px solid red;
+  margin: 0;
+  padding: 0;
+}
+.background {
+  background-color: #918c2f;
+  height: 100vh;
+  width: auto;
+}
+
+.middle {
+  display: flex;
+}
+
+
+.content {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.header {
+  align-self: center;
+}
+
+/* stuff here later */
+.sidebar {
+  width: 100px;
+  height: 600px;
+  margin: 24px;
+}
+
+.sketch-grid {
+  background-color: #76948c;
+  width: 800px;
+  height: 800px;
+  display: grid;
+}
