@@ -1,5 +1,5 @@
 * {
-  border: 1px solid red;
+  
   margin: 0;
   padding: 0;
 }
@@ -26,9 +26,27 @@
 
 /* stuff here later */
 .sidebar {
-  width: 200px;
+  width: 250px;
   height: 600px;
   margin: 24px;
+}
+
+
+.option-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 24px;
+}
+
+button {
+  font-size: medium;
 }
 
 .size {
@@ -37,18 +55,52 @@
 }
 
 #size {
-  default-value: 16;
  
 }
 
 #size-display {
-  height: 1rem;
+  font-size: 24px;
+  height: 1em;
   text-align: center;
+}
+
+.color-picker {
+  display: flex;
+  align-items: center;
+}
+
+label {
+  font-size: 24px;
+}
+
+#color {
+  margin-left: auto;
+}
+
+.shake {
+  margin-left: auto;
+}
+
+.grid-background {
+  background-image: url(./images/rickroll.webp);
 }
 
 .sketch-grid {
   background-color: #76948c;
+  border: 1px solid #526661;
   width: 800px;
   height: 800px;
   display: grid;
+  
 }
+
+.square {
+  border: inherit;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+

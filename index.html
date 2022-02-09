@@ -16,10 +16,23 @@
         </header>
         <div class="middle">
           <div class="sidebar">
-            <div class="options">
+            <div class="option-menu">
               <div class="option size">
                 <input id="size" type="range" min="2" max="100" value="16">
                 <output id="size-display" name="size-display" for="size"></output>
+              </div>
+              <div class="option color-picker">
+                <label for="color">Color:</label>
+                <input type="color" id="color" value="#1e3d3f">
+                <input type="radio" id="radio-color" name="options" value="radio-color" checked="true">
+              </div>
+              <div class="option reveal">
+                <label for="reveal">Reveal:</label>
+                <input type="radio" id="reveal" name="options" value="reveal">
+              </div>
+
+              <div class="shake">
+                <button id="shake">Shake it!</button>
               </div>
             </div>
           </div>
@@ -32,9 +45,11 @@
                   <p></p>
                 </div>
               </div>
-              <div class="sketch-container">
-                <div class="sketch-grid">
+              <div class="grid-background">
+                <div class="sketch-container">
+                  <div class="sketch-grid">
 
+                  </div>
                 </div>
               </div>
               <div class="bottom">
@@ -45,9 +60,6 @@
                 </div>
                 <div class="btn right"></div>
                 <div class="arrow right"></div>
-              </div>
-              <div class="shake">
-                <button id="shake"></button>
               </div>
             </div>
           </div>
