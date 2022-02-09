@@ -31,11 +31,12 @@ User has selected their options
   
 
 ## options
+
 - greyscale
   - every pass adds something to the opacity of the color selected
   - square.style.setElement() use a variable, and += some value everytim mouseEnter?
 
-- random - easy, use snipet
+- random - easy, use snippet
 - erase - set-background - default
 - reveal?
 

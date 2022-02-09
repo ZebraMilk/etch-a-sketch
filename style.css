@@ -26,9 +26,24 @@
 
 /* stuff here later */
 .sidebar {
-  width: 100px;
+  width: 200px;
   height: 600px;
   margin: 24px;
+}
+
+.size {
+  display: flex;
+  flex-direction: column;
+}
+
+#size {
+  default-value: 16;
+ 
+}
+
+#size-display {
+  height: 1rem;
+  text-align: center;
 }
 
 .sketch-grid {
