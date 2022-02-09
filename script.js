@@ -100,6 +100,7 @@ function resizeGrid() {
     grid.appendChild(square);
   };
   listenSquares();
+  reveal.checked = false;
 }
 
 
