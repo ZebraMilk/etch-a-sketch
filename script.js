@@ -36,9 +36,6 @@ radioColor.addEventListener('change', resizeGrid)
 
 
 function setReveal() {
-  resizeGrid();
-  // let background = document.querySelector('.grid-background');
-  // grid.removeAttribute('background-color');
   let squares = [... document.getElementsByClassName('square')];
   for (let index = 0; index < squares.length; index++) {
     squares[index].style.backgroundColor = '#000000'
@@ -72,14 +69,14 @@ function changeColor(e) {
   if (!isMouseDown) return;
   // stop the drag behavior of the browser
   e.preventDefault();
+  // check for reveal status
   if (!reveal.checked) {
   // default drawing
   e.target.style.backgroundColor = `${color.value}`;
   } else {
+    // make the squares transparent
     e.target.style.background = 'rgba(0, 0, 0, 0)';
-  }
-  // cases for the options selected
-  
+  }  
 }
 
 // update the size value from the slider
@@ -90,7 +87,7 @@ function updateSize(e) {
 }  
 
 
-// make a grid-draw function
+// make a grid with the given dimensions
 function resizeGrid() {
   clearGrid();
   grid.removeAttribute('opacity');
@@ -105,7 +102,7 @@ function resizeGrid() {
   listenSquares();
 }
 
-// Clear the grid
+
 function clearGrid () {
   // remove all the squares of grid
   while (grid.firstChild) {

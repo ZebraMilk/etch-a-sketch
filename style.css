@@ -4,14 +4,11 @@
   padding: 0;
 }
 .background {
-  background-color: #918c2f;
+  background-color: #d6cc04;
   height: 100vh;
   width: auto;
 }
 
-.middle {
-  display: flex;
-}
 
 
 .content {
@@ -22,9 +19,24 @@
 
 .header {
   align-self: center;
+  height: 140px;
+  justify-content: center;
+  align-items: center;
 }
 
-/* stuff here later */
+.middle {
+  display: flex;
+}
+
+.top .title {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+
 .sidebar {
   width: 250px;
   height: 600px;
