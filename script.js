@@ -1,4 +1,4 @@
-const isMouseDown = false;
+let isMouseDown = false;
 // Get the slider to listen to
 const slider = document.querySelector('#size');
 // Get the size value to play with
