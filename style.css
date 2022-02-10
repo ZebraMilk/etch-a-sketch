@@ -129,6 +129,11 @@ label {
 .bottom {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.footer {
+  text-align: center;
 }
 
 a {
