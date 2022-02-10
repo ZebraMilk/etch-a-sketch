@@ -1,17 +1,17 @@
 let isMouseDown = false;
 // Get the slider to listen to
-const slider = document.querySelector('#size');
+let slider = document.querySelector('#size');
 // Get the size value to play with
-const size = slider.value;
+let size = slider.value;
 // Grab size display to play with in later functions
-const sizeDisplay = document.getElementById('size-display');
+let sizeDisplay = document.getElementById('size-display');
 // grab the grid from the DOM to play with
-const grid = document.querySelector('.sketch-grid');
+let grid = document.querySelector('.sketch-grid');
 // abbreviate the buttons and color selector for use 
-const color = document.getElementById('color');
-const radioColor = document.getElementById('radio-color');
-const reveal = document.getElementById('reveal');
-const random = document.getElementById('random');
+let color = document.getElementById('color');
+let radioColor = document.getElementById('radio-color');
+let reveal = document.getElementById('reveal');
+let random = document.getElementById('random');
 
 // Add listeners to the radio buttons
 reveal.addEventListener('change', setReveal);
