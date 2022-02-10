@@ -22,9 +22,16 @@
                 <output id="size-display" name="size-display" for="size"></output>
               </div>
               <div class="option color-picker">
-                <label for="color">Color:</label>
-                <input type="color" id="color" value="#1e3d3f">
+                <label for="color">Draw:</label>
+                <div class="color-select">
+                  <input type="color" id="color" value="#1e3d3f">
+                  <div id="color-select">select</div>
+                </div>
                 <input type="radio" id="radio-color" name="options" value="radio-color" checked="true">
+              </div>
+              <div class="option random">
+                <label for="random">Random:</label>
+                <input type="radio" id="random" name="options" value="random">
               </div>
               <div class="option reveal">
                 <label for="reveal">Reveal:</label>
@@ -63,9 +70,9 @@
             </div>
           </div>
         </div>
-        <footer>
-          <p class="credits"></p>
-          <p class="links"></p>
+        <footer class="footer">
+          <span class="credits">Made with &#x1F49C;, &#x1F355;, & &#x2615; by</span>
+          <span class="links"><a href="https://github.com/ZebraMilk">zebramilk</a></span>
         </footer>
       </div>
     </div>

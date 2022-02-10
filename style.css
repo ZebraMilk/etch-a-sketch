@@ -14,6 +14,7 @@
 .content {
   display: flex;
   flex-direction: column;
+  align-items: center;
   
 }
 
@@ -75,9 +76,7 @@ button {
   flex-direction: column;
 }
 
-#size {
- 
-}
+
 
 #size-display {
   font-size: 24px;
@@ -90,13 +89,21 @@ button {
   align-items: center;
 }
 
+.color-select {
+  display: flex;
+  flex-direction: column;
+}
+
+#color-select {
+  font-size: 10px;
+  align-self: center;
+}
+
 label {
   font-size: 24px;
 }
 
-#color {
-  margin-left: auto;
-}
+
 
 .shake {
   margin-left: auto;
@@ -124,4 +131,6 @@ label {
   justify-content: space-between;
 }
 
-
+a {
+  font-style: none;
+}

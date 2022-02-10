@@ -1,52 +1,45 @@
-let isMouseDown = false;
+const isMouseDown = false;
+// Get the slider to listen to
+const slider = document.querySelector('#size');
+// Get the size value to play with
+const size = slider.value;
+// Grab size display to play with in later functions
+const sizeDisplay = document.getElementById('size-display');
+// grab the grid from the DOM to play with
+const grid = document.querySelector('.sketch-grid');
+// abbreviate the buttons and color selector for use 
+const color = document.getElementById('color');
+const radioColor = document.getElementById('radio-color');
+const reveal = document.getElementById('reveal');
+const random = document.getElementById('random');
+
+// Add listeners to the radio buttons
+reveal.addEventListener('change', setReveal);
+radioColor.addEventListener('change', resizeGrid)
+random.addEventListener('change', resizeGrid);
+
+sizeDisplay.innerText = `${size}`;
+// clear the drawing when shake button is pressed
+document.getElementById('shake').addEventListener('click', resizeGrid);
 document.addEventListener('mousedown', toggleMouseDown);
 document.addEventListener('mouseup', toggleMouseDown);
 
-// Get the slider to listen to
-let slider = document.querySelector('#size');
-// Get the size value to play with
-let size = slider.value;
 // record the value of the slider and then update grid
+grid.preventDefault;
 slider.oninput = updateSize;
 slider.onmouseup = resizeGrid;
 
-// Grab size display to play with in later functions
-let sizeDisplay = document.getElementById('size-display');
-sizeDisplay.innerText = `${size}`;
-
-// grab the grid from the DOM to play with
-let grid = document.querySelector('.sketch-grid');
-grid.preventDefault;
-// abbreviate the color for use 
-let color = document.getElementById('color');
-let radioColor = document.getElementById('radio-color');
-
-let reveal = document.getElementById('reveal');
-
-
-// clear the drawing when shake button is pressed
-document.getElementById('shake').addEventListener('click', resizeGrid);
-
 resizeGrid();
 
-
-reveal.addEventListener('change', setReveal);
-
-radioColor.addEventListener('change', resizeGrid)
-
-
 function setReveal() {
-  let squares = [... document.getElementsByClassName('square')];
+  let squares = [...document.getElementsByClassName('square')];
   for (let index = 0; index < squares.length; index++) {
     squares[index].style.backgroundColor = '#000000'
   }
   grid.style['background-color'] = 'rgba(0, 0, 0, 0)';
   console.log(reveal.checked);
   console.log(reveal.value);
-
 }
-
-
 
 function toggleMouseDown(e) {
   // don't drag the grid if the mouse event happens in a square
@@ -61,8 +54,6 @@ function toggleMouseDown(e) {
   }
 }
 
-
-
 // change the color of a square based on the buttons selected
 function changeColor(e) {
   // if mouse is not clicked, don't do anything
@@ -70,13 +61,15 @@ function changeColor(e) {
   // stop the drag behavior of the browser
   e.preventDefault();
   // check for reveal status
-  if (!reveal.checked) {
-  // default drawing
-  e.target.style.backgroundColor = `${color.value}`;
-  } else {
+  if (radioColor.checked) {
+    // default drawing
+    e.target.style.backgroundColor = `${color.value}`;
+  } else if (reveal.checked) {
     // make the squares transparent
     e.target.style.background = 'rgba(0, 0, 0, 0)';
-  }  
+  } else if (random.checked) {
+    e.target.style.background = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  }
 }
 
 // update the size value from the slider
@@ -84,8 +77,8 @@ function updateSize(e) {
   size = e.target.value;
   // Show the updated size as user slides the slider
   sizeDisplay.textContent = `${size}`;
-}  
 
+}
 
 // make a grid with the given dimensions
 function resizeGrid() {
@@ -103,8 +96,7 @@ function resizeGrid() {
   reveal.checked = false;
 }
 
-
-function clearGrid () {
+function clearGrid() {
   // remove all the squares of grid
   while (grid.firstChild) {
     grid.removeChild(grid.firstChild);
@@ -118,7 +110,6 @@ function listenSquares() {
   // grab all the squares I have made and turn em into an array
   let squares = [... (document.querySelectorAll('.square'))];
   // add eventListener to each square that responds to mouseover?
-  squares.forEach(square => square.addEventListener('mousemove', changeColor));
+  squares.forEach(square => square.addEventListener('mouseover', changeColor));
   squares.forEach(square => square.addEventListener('mouseup', changeColor));
-
 }
