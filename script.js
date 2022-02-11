@@ -37,8 +37,6 @@ function setReveal() {
     squares[index].style.backgroundColor = '#000000'
   }
   grid.style['background-color'] = 'rgba(0, 0, 0, 0)';
-  console.log(reveal.checked);
-  console.log(reveal.value);
 }
 
 function toggleMouseDown(e) {
@@ -60,13 +58,15 @@ function changeColor(e) {
   if (!isMouseDown) return;
   // stop the drag behavior of the browser
   e.preventDefault();
-  // check for reveal status
+  // check for normal status
   if (radioColor.checked) {
     // default drawing
     e.target.style.backgroundColor = `${color.value}`;
+    // check for reveal
   } else if (reveal.checked) {
     // make the squares transparent
     e.target.style.background = 'rgba(0, 0, 0, 0)';
+    // check for random
   } else if (random.checked) {
     e.target.style.background = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
   }
@@ -77,12 +77,12 @@ function updateSize(e) {
   size = e.target.value;
   // Show the updated size as user slides the slider
   sizeDisplay.textContent = `${size}`;
-
 }
 
 // make a grid with the given dimensions
 function resizeGrid() {
   clearGrid();
+  // Reset the opacity of the grid from reveal, hiding the image beneath
   grid.removeAttribute('opacity');
   // set the gridTemplate for the adjustable size
   grid.style.gridTemplate = `repeat(${size}, 1fr) / repeat(${size}, 1fr)`;
@@ -93,6 +93,7 @@ function resizeGrid() {
     grid.appendChild(square);
   };
   listenSquares();
+  // make the user select a draw mode again
   reveal.checked = false;
 }
 
